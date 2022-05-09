@@ -69,7 +69,7 @@ export default function Login(props) {
             const config = {
               headers: { Authorization: `Bearer ${userInfo.token}` },
             };
-            const obj = { value: _value };
+            const obj = { name: _desc, value: _value };
             try {
               await axios.put(URL, obj, config);
               navigate("/home");
@@ -92,7 +92,7 @@ export default function Login(props) {
             const config = {
               headers: { Authorization: `Bearer ${userInfo.token}` },
             };
-            const obj = { value: _value };
+            const obj = { name: _desc, value: _value };
             try {
               await axios.put(URL, obj, config);
               navigate("/home");

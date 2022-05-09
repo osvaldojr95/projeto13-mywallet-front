@@ -66,10 +66,8 @@ export default function Login() {
   useEffect(() => {
     const verifyLogin = async () => {
       const infoSerializado = localStorage.getItem("userInfo");
-      let token = "";
       if (infoSerializado) {
         const user = JSON.parse(infoSerializado);
-        token = user.token;
         setUserInfo(user);
         navigate("/home");
       } else {
@@ -120,6 +118,10 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  form {
+    width: 100%;
+  }
 `;
 
 const Logo = styled.h1`

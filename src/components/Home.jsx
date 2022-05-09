@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   AiOutlinePlusCircle,
   AiOutlineMinusCircle,
@@ -10,7 +10,6 @@ import axios from "axios";
 import { useUser } from "../contexts/UserContext.jsx";
 import { useBalance } from "../contexts/BalanceContext.jsx";
 import styled from "styled-components";
-import dayjs from "dayjs";
 
 export default function Home() {
   const { userInfo, setUserInfo } = useUser();
@@ -22,7 +21,7 @@ export default function Home() {
     const items = balance.map((item) => {
       return (
         <Item cor={item.operation}>
-          <h5>{item.dia ?? dayjs(Date.now()).format("DD/MM")}</h5>
+          <h5>{item.data}</h5>
           <h4
             onClick={() => {
               setSelect(item.id);
@@ -168,12 +167,6 @@ const Top = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-`;
-
-const LogOut = styled.img`
-  color: var(--white);
-  font-size: 26px;
-  font-weight: 700;
 `;
 
 const Balance = styled.div`
