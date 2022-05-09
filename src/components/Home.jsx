@@ -38,7 +38,7 @@ export default function Home() {
               const config = {
                 headers: { Authorization: `Bearer ${userInfo.token}` },
               };
-              const URL = `http://localhost:5002/balance/${item.id}/delete`;
+              const URL = `https://projeto13-backend.herokuapp.com/balance/${item.id}/delete`;
               try {
                 await axios.delete(URL, config);
                 setReload([]);
@@ -54,7 +54,7 @@ export default function Home() {
 
   const logout = async () => {
     const config = { headers: { Authorization: `Bearer ${userInfo.token}` } };
-    const URL = "http://localhost:5002/sign-out";
+    const URL = "https://projeto13-backend.herokuapp.com/sign-out";
     try {
       await axios.post(URL, {}, config);
       localStorage.removeItem("userInfo");
@@ -87,7 +87,7 @@ export default function Home() {
       }
 
       const config = { headers: { Authorization: `Bearer ${token}` } };
-      const URL = "http://localhost:5002/balance";
+      const URL = "https://projeto13-backend.herokuapp.com/balance";
       try {
         const promise = await axios.get(URL, config);
         const { data } = promise;

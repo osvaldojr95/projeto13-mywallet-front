@@ -23,7 +23,7 @@ export default function Login(props) {
           button: "Salvar entrada",
           callback: async (e, _value, _desc) => {
             e.preventDefault();
-            const URL = "http://localhost:5002/balance?operation=true";
+            const URL = "https://projeto13-backend.herokuapp.com/balance?operation=true";
             const config = {
               headers: { Authorization: `Bearer ${userInfo.token}` },
             };
@@ -44,7 +44,7 @@ export default function Login(props) {
           button: "Salvar saída",
           callback: async (e, _value, _desc) => {
             e.preventDefault();
-            const URL = "http://localhost:5002/balance?operation=false";
+            const URL = "https://projeto13-backend.herokuapp.com/balance?operation=false";
             const config = {
               headers: { Authorization: `Bearer ${userInfo.token}` },
             };
@@ -65,7 +65,7 @@ export default function Login(props) {
           button: "Atualizar entrada",
           callback: async (e, _value, _desc) => {
             e.preventDefault();
-            const URL = `http://localhost:5002/balance/${select}/update`;
+            const URL = `https://projeto13-backend.herokuapp.com/balance/${select}/update`;
             const config = {
               headers: { Authorization: `Bearer ${userInfo.token}` },
             };
@@ -88,7 +88,7 @@ export default function Login(props) {
           button: "Atualizar saída",
           callback: async (e, _value, _desc) => {
             e.preventDefault();
-            const URL = `http://localhost:5002/balance/${select}/update`;
+            const URL = `https://projeto13-backend.herokuapp.com/balance/${select}/update`;
             const config = {
               headers: { Authorization: `Bearer ${userInfo.token}` },
             };

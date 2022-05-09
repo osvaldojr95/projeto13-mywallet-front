@@ -61,7 +61,7 @@ export default function SignUp() {
     }
 
     setError("");
-    const URL = "http://localhost:5002/sign-up";
+    const URL = "https://projeto13-backend.herokuapp.com/sign-up";
     const obj = { name, email, password };
     const config = {
       headers: { User: email },
